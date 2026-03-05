@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<title>Tujhe Kuch Batana Hai 💕</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div id="tap-overlay" onclick="startApp()">
+  <div class="tap-heart">💕</div>
+  <div class="tap-text">Tap to Begin</div>
+  <div class="tap-sub">Kuch batana hai tujhe… 🤭</div>
+</div>
+
+<!-- Made by Praveen — always visible on every page -->
+<div id="praveen-tag">💗 Made by Praveen</div>
+
+<div class="hearts-bg" id="hbg"></div>
+<div class="conf-wrap" id="confWrap"></div>
+<div id="cloud-wrap"><div class="cloud-bubble" id="cloud-msg"></div></div>
+
+<!-- ═══ AUDIO — put mp3 files in same folder as this HTML ═══ -->
+<audio id="bgm1" loop src="first.mp3"></audio>
+<audio id="bgm2" loop src="1.mp3"></audio>
+<audio id="bgm3" loop src="_Blue Eyes Full Video Song Yo Yo Honey Singh _ Blockbuster Song Of 2013_320k.mp3"></audio>
+<audio id="bgm4" loop src="kya boltee.mp3"></audio>
+<audio id="bgm5" loop src="kuch dhundoo na.mp3"></audio>
+<audio id="bgm6" loop src="ehsaas.mp3"></audio>
+<audio id="bgm7" loop src="Tu Hai Kahan Song _ Status Video _ Lyrics Video _%23shorts %23ytshorts %23trending %23songs_320k.mp3"></audio>
+
+<!-- ══════ PAGE 1 ══════ -->
+<div id="p1" class="page visible">
+  <div class="gif-box anim-pop">
+    <img src="bubu-dudu-sseeyall.gif" alt=""/>
+  </div>
+  <p class="type-text t-dark" id="t1"></p>
+  <div class="bar-wrap"><div class="bar-fill" id="bar1"></div></div>
+  <button class="btn btn-next btn-hidden" id="next1" onclick="go(1,2)">Aage Ja ➜</button>
+</div>
+
+<!-- ══════ PAGE 2 — ROMANTIC ══════ -->
+<div id="p2" class="page hidden-right">
+  <img id="p2-bgimg" src="Bubu-and-Dudu-300x291.png" alt=""/>
+  <div id="p2-overlay"></div>
+  <div class="p2-sparkles" id="p2sparks"></div>
+  <div id="p2petals"></div>
+
+  <div class="p2-cnt">
+    <div class="glow-div"></div>
+
+    <!-- 4 images surrounding shayari — 2 left | card | 2 right -->
+    <div class="img-shayari-wrap">
+      <div class="side-col">
+        <img class="side-img" src="shaking-cute.gif" alt=""/>
+        <img class="side-img" src="bubu-dudu-bubu.gif" alt="" style="animation-delay:0.2s;"/>
+      </div>
+      <div class="romantic-card">
+        <div class="inner-line" id="t2"></div>
+      </div>
+      <div class="side-col">
+        <img class="side-img" src="cute.gif" alt="" style="animation-delay:0.15s;"/>
+        <img class="side-img" src="bubu-dance.gif" alt="" style="animation-delay:0.45s;"/>
+      </div>
+    </div>
+
+    <div class="glow-div"></div>
+    <div class="bar-wrap dark-bg"><div class="bar-fill" id="bar2"></div></div>
+    <button class="btn btn-yes btn-hidden" id="next2" onclick="go(2,3)">Aage Ja ➜</button>
+  </div>
+</div>
+
+<!-- ══════ PAGE 3 — YES / NO ══════ -->
+<div id="p3" class="page hidden-right">
+  <img class="page-bgimg" src="naughty.gif" alt=""/>
+  <div class="page-overlay"></div>
+  <div style="position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;padding:20px;">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:36px;">
+      <p class="type-text t-dark" id="t3" style="font-size:clamp(20px,5vw,34px);"></p>
+      <p class="type-sub" id="t3b" style="color:#888;"></p>
+    </div>
+    <div id="yn-area">
+      <button class="btn btn-yes" id="btn-yes-el" onclick="go(3,4)">Thoda sa haan 😆 💕</button>
+      <button id="btn-no-el" onmouseenter="if(window.noReady)runNo()" ontouchstart="runNo(event)" onclick="runNo();return false;">Tu sirf mera acha friend hai 🙄</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ PAGE 4 — DAY LOVE ══════ -->
+<div id="p4" class="page hidden-right">
+  <img class="page-bgimg" src="dudu_smart.gif" alt="" style="opacity:0.25;"/>
+  <div class="page-overlay" style="background:linear-gradient(180deg,rgba(135,206,235,0.2) 0%,rgba(255,255,255,0.05) 50%,rgba(212,240,192,0.2) 100%);"></div>
+  <div class="sun"></div>
+  <div id="p4hearts" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1;"></div>
+  <div id="p4clouds"></div>
+  <div id="p4butterflies"></div>
+  <div class="layer" style="z-index:3;">
+    <div class="gif-box anim-pop" style="border-color:#e91e63;box-shadow:0 0 26px rgba(233,30,99,0.4),5px 5px 0 #880e4f;">
+      <img src="dudu_smart.gif" alt=""/>
+    </div>
+    <p class="type-text t-sky" id="t4"></p>
+    <div class="bar-wrap"><div class="bar-fill" id="bar4"></div></div>
+    <button class="btn btn-yes btn-hidden" id="next4" onclick="go(4,5)">Aage Ja ➜</button>
+  </div>
+</div>
+
+<!-- ══════ PAGE 5 — STARS ══════ -->
+<div id="p5" class="page hidden-right">
+  <img class="page-bgimg" src="cute.gif" alt="" style="opacity:0.3;"/>
+  <div class="page-overlay" style="background:linear-gradient(180deg,rgba(45,27,78,0.5) 0%,rgba(45,27,78,0.2) 50%,rgba(45,27,78,0.5) 100%);"></div>
+  <div id="p5starfield" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;"></div>
+  <div id="p5floaty" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:2;"></div>
+  <div class="layer" style="z-index:3;">
+    <div class="gif-box anim-pop" style="border-color:#a78bfa;box-shadow:0 0 26px rgba(167,139,250,0.55),5px 5px 0 #7c3aed;">
+      <img src="bubu_innocent.gif" alt=""/>
+    </div>
+    <p class="type-text t-purple" id="t5"></p>
+    <p class="type-sub" id="t5b" style="color:#c4b5fd;"></p>
+    <div class="bar-wrap dark-bg"><div class="bar-fill" id="bar5"></div></div>
+    <button class="btn btn-purple btn-hidden" id="next5" onclick="go(5,6)">Haan bilkul 💞</button>
+  </div>
+</div>
+
+<!-- ══════ PAGE 6 — NIGHT ══════ -->
+<div id="p6" class="page hidden-right">
+  <img class="page-bgimg" src="bubu-dudu-bubu.gif" alt="" style="opacity:0.35;"/>
+  <div class="page-overlay" style="background:linear-gradient(180deg,rgba(10,0,16,0.6) 0%,rgba(26,0,48,0.3) 50%,rgba(10,0,16,0.6) 100%);"></div>
+  <div id="p6stars" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;"></div>
+  <div class="aurora"></div>
+  <div class="layer" style="z-index:3;">
+    <div class="gif-box anim-pop" style="border-color:#ffe066;box-shadow:0 0 26px rgba(255,224,102,0.5),5px 5px 0 #b8860b;">
+      <img src="bubi_roam.gif" alt=""/>
+    </div>
+    <p class="type-text t-light" id="t6"></p>
+    <p class="type-sub" id="t6b" style="color:#f0c4dc;"></p>
+    <div class="bar-wrap dark-bg"><div class="bar-fill" id="bar6"></div></div>
+    <button class="btn btn-pink btn-hidden" id="next6" onclick="go(6,7)">Aage Ja ➜</button>
+  </div>
+</div>
+
+<!-- ══════ PAGE 7 — FINAL ══════ -->
+<div id="p7" class="page hidden-right">
+  <img class="page-bgimg" src="hands.gif" alt="" style="opacity:0.3;"/>
+  <div class="page-overlay" style="background:linear-gradient(180deg,rgba(255,249,240,0.4) 0%,rgba(255,255,255,0.05) 50%,rgba(252,228,236,0.4) 100%);"></div>
+  <div class="p7-sun anim-float"></div>
+  <div class="emoji-rain" id="emojiRain"></div>
+  <div id="p7birds"></div>
+  <div class="layer" style="z-index:3;">
+    <div style="font-size:clamp(60px,15vw,95px);animation:float 2s ease-in-out infinite;filter:drop-shadow(0 0 18px rgba(255,200,0,0.55));">😊</div>
+    <p class="type-text t-warm" id="t7" style="font-size:clamp(17px,4.5vw,30px);"></p>
+    <p class="type-sub" id="t7b" style="color:#e91e63;line-height:1.85;max-width:min(340px,88vw);"></p>
+    <p class="type-sub" id="t7c" style="color:#c2185b;font-family:'Nunito',sans-serif;font-weight:900;font-size:clamp(15px,4vw,22px);"></p>
+    <div class="two-gifs">
+      <div class="gif-box">
+        <img src="bubu-dudu-sseeyall (1).gif" alt=""/>
+      </div>
+      <div class="gif-box">
+        <img src="bye.gif" alt=""/>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
